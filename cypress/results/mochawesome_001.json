@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-04-04T01:28:18.315Z",
+    "end": "2022-04-04T01:30:21.665Z",
+    "duration": 123350,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fb1026af-04b8-4582-a60e-3bce6d2f4db3",
+      "title": "",
+      "fullFile": "cypress/integration/mercari_test/mercari_website.js",
+      "file": "cypress/integration/mercari_test/mercari_website.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ad28ae50-e12c-44c2-b62e-b0f86b8eef95",
+          "title": "Test Mercari Site using Cypress",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Confirm Shopping Cart",
+              "fullTitle": "Test Mercari Site using Cypress Confirm Shopping Cart",
+              "timedOut": null,
+              "duration": 31433,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.components__WrapperButton-sc-18pafoj-0 > .Flex-ych44r-0 > svg').click();\ncy.contains('Your shopping cart is empty');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Your shopping cart is empty' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Your shopping cart is empty' but never did.\n    at Context.eval (https://www.mercari.com/__cypress/tests?p=cypress\\integration\\mercari_test\\mercari_website.js:106:8)",
+                "diff": null
+              },
+              "uuid": "b754b295-2731-402d-9dd7-145252ed3c50",
+              "parentUUID": "ad28ae50-e12c-44c2-b62e-b0f86b8eef95",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Search for Shirts",
+              "fullTitle": "Test Mercari Site using Cypress Search for Shirts",
+              "timedOut": null,
+              "duration": 43839,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-testid=SearchInput]').type('Shirts');\ncy.get('[data-testid=SearchIcon] > svg').click().wait(2000);\ncy.url().should('include', 'Shirts');\nexpect('[data-testid=SearchKeyword]').to.exist;\ncy.contains('Shirts');",
+              "err": {},
+              "uuid": "336149f0-715b-42e6-919c-12a9e6982264",
+              "parentUUID": "ad28ae50-e12c-44c2-b62e-b0f86b8eef95",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Confirm Login requires correct credentials",
+              "fullTitle": "Test Mercari Site using Cypress Confirm Login requires correct credentials",
+              "timedOut": null,
+              "duration": 38507,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-testid=LoginButton]').click();\ncy.get('[data-testid=EmailInput]').type('brotherjfaw@gmail.com');\ncy.get('[data-testid=PasswordInput]').type('password00');\ncy.get('[data-testid=LoginSubmitButton] > .Text-uqn6ov-0').click();\ncy.contains('Something went wrong.');",
+              "err": {},
+              "uuid": "964ddb50-f7ef-424b-bde3-2accd446d7ea",
+              "parentUUID": "ad28ae50-e12c-44c2-b62e-b0f86b8eef95",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "336149f0-715b-42e6-919c-12a9e6982264",
+            "964ddb50-f7ef-424b-bde3-2accd446d7ea"
+          ],
+          "failures": [
+            "b754b295-2731-402d-9dd7-145252ed3c50"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 113779,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

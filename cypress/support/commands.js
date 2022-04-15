@@ -23,3 +23,39 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+Cypress.Commands.add('confirmHeadings', ()=>{
+
+    let testData
+
+    cy.fixture('headings').then(function(data){
+        testData = data
+
+        for (let i=1; i<=6; i++ ){
+            let rowindex = JSON.stringify(i)
+            if (i != 3){
+                cy.get(`.site-nav > :nth-child(${rowindex}) > a`).click()
+                cy.get('h1').should('have.text', testData[i])
+                cy.log(testData[i])
+            }
+            
+
+        }
+
+    })
+})
+
+
+Cypress.Commands.add('verifyMediaLinks', (weblink)=>{
+    cy.request({
+        method: 'GET',
+        url: weblink,
+        form: true,
+        body:{
+        }
+    }).then((response) =>{
+        cy.log(response.body);
+        expect(response.status).to.eq(200)
+    })
+})

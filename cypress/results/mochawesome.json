@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-04-04T01:28:12.590Z",
+    "end": "2022-04-04T01:28:13.446Z",
+    "duration": 856,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f3dfbdbf-2c29-4e76-95b0-2a97ffaef92f",
+      "title": "",
+      "fullFile": "cypress/integration/mercari_test/api_test.js",
+      "file": "cypress/integration/mercari_test/api_test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "97127b81-7d9c-4ada-b132-a65032471d5a",
+          "title": "Perform some API calls",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Call Barn Unlock API",
+              "fullTitle": "Perform some API calls Call Barn Unlock API",
+              "timedOut": null,
+              "duration": 560,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: `http://coop.apps.symfonycasts.com/api/${userId}/barn-unlock`,\n  headers: {\n    'Authorization': 'Bearer ' + acctoken\n  }\n}).then(res => {\n  expect(res.status).to.equal(200);\n});",
+              "err": {},
+              "uuid": "30252a90-8d28-4ef8-ac58-ad40c53428f7",
+              "parentUUID": "97127b81-7d9c-4ada-b132-a65032471d5a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Call Put the Toilet Set down API",
+              "fullTitle": "Perform some API calls Call Put the Toilet Set down API",
+              "timedOut": null,
+              "duration": 231,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: `http://coop.apps.symfonycasts.com/api/${userId}/toiletseat-down`,\n  headers: {\n    'Authorization': 'Bearer ' + acctoken\n  }\n}).then(res => {\n  cy.log(res);\n  expect(res.status).to.equal(200);\n  expect(res.body.action).to.equal('toiletseat-down'); //expect(res.body.message).to.equal(\"You just put the toilet seat down. You're a wonderful roommate!\" || \"Yea, the toilet seat is already down... you slob!\");\n  expect(res.body.success).to.equal(true);\n});",
+              "err": {},
+              "uuid": "3c2ee097-cab6-408c-85af-0682c337b10e",
+              "parentUUID": "97127b81-7d9c-4ada-b132-a65032471d5a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "30252a90-8d28-4ef8-ac58-ad40c53428f7",
+            "3c2ee097-cab6-408c-85af-0682c337b10e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 791,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
